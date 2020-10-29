@@ -21,7 +21,7 @@ namespace GoogleVR.Demos
     using UnityEngine;
 
     /// <summary>Ensures correct app and scene setup.</summary>
-    public class SceneManager : MonoBehaviour
+    public class DemoSceneManager : MonoBehaviour
     {
         private void Start()
         {
