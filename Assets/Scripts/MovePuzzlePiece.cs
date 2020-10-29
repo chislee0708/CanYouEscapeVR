@@ -7,6 +7,7 @@ public class MovePuzzlePiece : MonoBehaviour
 
     public GameObject puzzlePiece;
     public GameObject playerHand;
+    bool inHands = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,9 +19,16 @@ public class MovePuzzlePiece : MonoBehaviour
     void Update()
     {
         if(Input.GetButtonDown("Fire1"))
-        {
-            puzzlePiece.transform.SetParent(playerHand.transform);
-            puzzlePiece.transform.localPosition = new Vector3(0f, -0.4f, 0f);
+        {   
+            if(!inHands) {
+                inHands = true;
+                puzzlePiece.transform.SetParent(playerHand.transform);
+                puzzlePiece.transform.localPosition = new Vector3(0f, -0.4f, 0f);
+            } else if ( inHands ){
+                inHands = false;
+                puzzlePiece.transform.SetParent(null);
+                puzzlePiece.transform.localPosition = puzzlePiece.transform.position;
+            }
         }
     }
 }
