@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class rotationPuzActive : MonoBehaviour
 {
+
+    public GameObject[] pipes;
+    public Material originalMaterial;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,8 +25,26 @@ public class rotationPuzActive : MonoBehaviour
             //soundDoor.Play();
 
             //StartCoroutine(WaitForSound());
-            print("col");
-            GetComponent<Renderer>().material.color = Color.red;
+            
+            GetComponent<Renderer>().material.color = Color.green;
+           
+            pipes = GameObject.FindGameObjectsWithTag("pipe");
+            for (int i = 0; i < pipes.Length; i++)
+            {
+                pipes[i].GetComponent<MeshRenderer>().material.color = Color.green;
+            }
+
+        } else
+        {
+            GetComponent<Renderer>().material.color = Color.blue;
+        }
+
+    }
+    void OnTriggerExit(Collider colidedObj)
+    {
+        if (colidedObj.gameObject.tag == "rotation_puzzle_tag")
+        {
+            GetComponent<Renderer>().material = originalMaterial;
         }
 
     }
@@ -32,8 +53,8 @@ public class rotationPuzActive : MonoBehaviour
     //    yield return new WaitForSeconds(duration - 1);
     //    Debug.Log("FinishAudio");
 
-   
+
     //    loadLevel.LoadingLevel(1);
 
-   //}
+    //}
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
+
+    public Material originalMaterial;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,6 @@ public class Rotate : MonoBehaviour
 
     public void Red()
     {
-        GetComponent<Renderer>().material.color = Color.red;
+        GetComponent<Renderer>().material = originalMaterial;
     }
 }
