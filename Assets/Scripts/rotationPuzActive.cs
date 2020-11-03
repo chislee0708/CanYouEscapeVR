@@ -6,7 +6,7 @@ public class rotationPuzActive : MonoBehaviour
 {
 
     public GameObject[] pipes;
-    public Material originalMaterial;
+    public Material originalMaterialB;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +44,7 @@ public class rotationPuzActive : MonoBehaviour
     {
         if (colidedObj.gameObject.tag == "rotation_puzzle_tag")
         {
-            GetComponent<Renderer>().material = originalMaterial;
+            GetComponent<Renderer>().material = originalMaterialB;
         }
 
     }
