@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class activateKey : MonoBehaviour
 {
+    public GameObject key;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +18,13 @@ public class activateKey : MonoBehaviour
         if(GameObject.Find("Pipe1").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pipe2").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pipe3").GetComponent<rotationPuzActive>().activator)
         {
             GetComponent<Renderer>().material.color = Color.green; //change color to green
+            key.SetActive(true); //key is visible
         }
         //at least 1 puzzle pieces solved incorrectly
         else
         {
             GetComponent<Renderer>().material.color = Color.red; //change color to red
+            key.SetActive(false); //key is not visible
         }
     }
 }
