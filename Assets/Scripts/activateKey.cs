@@ -15,7 +15,9 @@ public class activateKey : MonoBehaviour
     void Update()
     {
         //if all puzzle pieces solved correctly
-        if(GameObject.Find("Pipe1").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pipe2").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pipe3").GetComponent<rotationPuzActive>().activator)
+        if(GameObject.Find("Pipe1").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pipe2").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pipe3").GetComponent<rotationPuzActive>().activator
+            && GameObject.Find("Pipe4").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pipe5").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pipe6").GetComponent<rotationPuzActive>().activator
+            && GameObject.Find("Pipe7").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pipe8").GetComponent<rotationPuzActive>().activator)
         {
             GetComponent<Renderer>().material.color = Color.green; //change color to green
             key.SetActive(true); //key is visible
