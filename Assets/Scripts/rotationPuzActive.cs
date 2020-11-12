@@ -23,7 +23,6 @@ public class rotationPuzActive : MonoBehaviour
             pipes = GameObject.FindGameObjectsWithTag("pipe"); //pipes are all objects with tag "pipe"
             for (int i = 0; i < pipes.Length; i++)
             {
-                //pipes[i].GetComponent<MeshRenderer>().material.color = Color.green;  //change color to green
                 activator = true; // mark true because piece of puzzle solved
             }
 
@@ -39,13 +38,5 @@ public class rotationPuzActive : MonoBehaviour
         }
 
     }
-    //IEnumerator WaitForSound()
-    //{
-    //    yield return new WaitForSeconds(duration - 1);
-    //    Debug.Log("FinishAudio");
 
-
-    //    loadLevel.LoadingLevel(1);
-
-    //}
 }

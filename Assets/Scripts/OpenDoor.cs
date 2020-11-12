@@ -5,9 +5,10 @@ using UnityEngine;
 public class OpenDoor : MonoBehaviour
 {
     public Animation DoorAnimation;
+    public GameObject key;
     //public LoadLevel loadLevel;
     //public AudioClip audio;
-    //public AudioSource soundDoor;
+    public AudioSource soundDoor;
 
     //public GameObject LoadingScreen;
 
@@ -22,31 +23,25 @@ public class OpenDoor : MonoBehaviour
     {
         if (colidedObj.gameObject.tag == "key_tag") // if key is in the door
         {
-            DoorAnimation.Play();
             
+            DoorAnimation.gameObject.GetComponent<Animator>().enabled = true;
+            DoorAnimation.Play();
             Debug.Log("door");
-            //soundDoor = GetComponent<AudioSource>();
+            key.SetActive(false); //key is not visible
+
+            soundDoor = GetComponent<AudioSource>();
             //soundDoor.clip = audio;
 
-            //duration = audio.length;
-            //soundDoor.Play();
+            
+            soundDoor.Play();
 
             //StartCoroutine(WaitForSound());
 
             //GetComponent<Renderer>().material.color = Color.green; //change color to green
 
-            
+
 
         }
     }
 
-    //IEnumerator WaitForSound()
-    //{
-    //    yield return new WaitForSeconds(duration - 1);
-    //    Debug.Log("FinishAudio");
-
-
-    //    loadLevel.LoadingLevel(1);
-
-    //}
 }
