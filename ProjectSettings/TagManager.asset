@@ -3,12 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - ing1
-  - ing2
-  - ing3
-  - ing4
-  - ing5
+  tags: []
   layers:
   - Default
   - TransparentFX
