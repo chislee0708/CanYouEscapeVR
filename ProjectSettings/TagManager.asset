@@ -6,6 +6,8 @@ TagManager:
   tags:
   - rotation_puzzle_tag
   - pipe
+  - key_tag
+  - stopper
   layers:
   - Default
   - TransparentFX
