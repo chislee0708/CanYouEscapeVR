@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class CraftBox : MonoBehaviour
 {
+    Vector3 waypoint;
     public bool isComplete = false;
     // List for ingredient tags
-    public List<string> ingTags = new List<string>(); //GameObject.tag is string
+    public List<string> ingTags = new List<string>(); //gameObject.tag is string
     //public Material[] materials; // need to see if can access material by name instead as will break script otherwise
     //Renderer rend;
     public GameObject[] ings = new GameObject[5]; // arr for ingredients
+    public GameObject medpack; // for calling medpacj object at end
 
     // Start is called before the first frame update
     void Start()
@@ -42,25 +44,32 @@ public class CraftBox : MonoBehaviour
     // Used for adding items to craftbox
     void OnCollisionsEnter(Collision col)
     {
-        if (col.GameObject.tag == "ing1" || col.GameObject.tag == "ing2" || col.GameObject.tag == "ing3" || col.GameObject.tag == "ing4" || col.GameObject.tag == "ing5")
+        if (col.gameObject.tag == "ing1" || col.gameObject.tag == "ing2" || col.gameObject.tag == "ing3" || col.gameObject.tag == "ing4" || col.gameObject.tag == "ing5")
         {
-            Debug.Log("Added " + col.GameObject.tag); // test script
-            ingTags.Add(col.GameObject.tag);
-            string tag = col.GameObject.tag;
+            Debug.Log("Added " + col.gameObject.tag); // test script
+            ingTags.Add(col.gameObject.tag);
+            string tag = col.gameObject.tag;
             char c = tag[3];
             int objectNum = (int)(c-'0'); // makes tag ing num an integer for ings array purposes
             objectNum -= 1; // allligns ing# with array pos
             ings[objectNum].SetActive(false); // makes corresponding ingredient objcet invisible?
+           
+            waypoint = transform.position; //?
+
+
             // Remove obj material (make obj invisible and send it to outside room loc) ?
             // rend.sharedMaterial = material[0]; //??? remove and make invisible? 
             // May not be nescessary to move obj ing until rresetting and then setactive true
-            int numOfIngs = ingTags.Capacity; 
+            int numOfIngs = ingTags.Count; 
             if (numOfIngs > 2) // 3 ings to make medpack 
             {
                 isComplete = transformCraftbox();     
-                if (isComplete = true)
+                if (isComplete == true)
                 {
-                    // Exit and end puzzle
+                    // make medpack object appear
+                    medpack.transform.position = new Vector3(2, 1, 4);
+                    // Destroys craftbox as puzzle is complete
+                    GameObject.Destroy(this.gameObject);
                 }
                 else // puzzle is not solved
                 {
@@ -69,7 +78,6 @@ public class CraftBox : MonoBehaviour
             }
         }            
     }
-
 
     bool transformCraftbox() 
     {
@@ -82,7 +90,7 @@ public class CraftBox : MonoBehaviour
         {
             return true;
         }
-        // possible other combos can be put here
+        // possible otehr combos can be put here
         else
         {
             return false;
@@ -104,19 +112,18 @@ public class CraftBox : MonoBehaviour
 
     void resetIngredients()
     {
-        // reset all ingredients func?
-        // how will it restore item's scripts?
-        // Add obj original material
-        // at end just move ings to vector pointsthey were at originally
-        // reset ingredient obj list
         ingTags.Clear(); // clears list of ings
-        // transform.GameObject 
         for(int i = 0; i < 5; i++) // makes ingredients reappear
         {
             ings[i].SetActive(true);
-        }    
-    }
-
+        }
+        // ings assigned to old locations 
+        ings[0].transform.position = new Vector3(4.3f, 2.25f, 14.875f);
+        ings[1].transform.position = new Vector3(2f, 1f, 4.829f);
+        ings[2].transform.position = new Vector3(2f, 0.125f, 0.125f);
+        ings[3].transform.position = new Vector3(0f, 0.125f, 0.125f);
+        ings[4].transform.position = new Vector3(5.75f, 0.125f, 4f);   
+    } 
 }
 // way to possibly destroy object
 /*
@@ -132,7 +139,7 @@ void Update()
         {
             if(hit.transform.tag == "Fence")
             {
-                Destroy(hit.transform.GameObject);
+                Destroy(hit.transform.gameObject);
             }
         }
 
