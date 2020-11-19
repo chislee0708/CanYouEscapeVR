@@ -2,19 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mazeDoorController : MonoBehaviour
-{   
-    //Fetch the Animator
-    Animator mazeDoorAnimator;
-    bool closeDoor;
+public class MazeDoorScript : MonoBehaviour
+{
+    Animator DoorAnim;
 
-    public GameObject Door1;
-    
     // Start is called before the first frame update
     void Start()
     {
-        mazeDoorAnimator = new Door.GetComponent<Animator>();
-        closeDoor = true;
+        DoorAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,19 +20,12 @@ public class mazeDoorController : MonoBehaviour
             && GameObject.Find("Pipe4").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pipe5").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pipe6").GetComponent<rotationPuzActive>().activator
             && GameObject.Find("Pipe7").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pipe8").GetComponent<rotationPuzActive>().activator)
         {
-            GetComponent<Renderer>().material.color = Color.green; //change color to green
-            closeDoor = false;
+            DoorAnim.SetBool("CloseDoor", false);
         }
+        //at least 1 puzzle pieces solved incorrectly
         else
         {
-            GetComponent<Renderer>().material.color = Color.red; //change color to red
-            closeDoor = true;
+            DoorAnim.SetBool("CloseDoor", true);
         }
-
-        if(closeDoor == false)
-            mazeDoorAnimator.SetBoolean("CloseDoor", false);
-
-        if(closeDoor == true)
-            mazeDoorAnimator.SetBoolean("CloseDoor", true);
     }
 }
