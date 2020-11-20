@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class move_forward : MonoBehaviour
 {
-    public float speed = 10f;
-    public bool canMove = true;
+    //public float speed = 10f;
+    //public bool canMove = true;
     public Text countText;
 	public Text gameOverText;
 	public Text instructionText;
@@ -44,12 +44,7 @@ public class move_forward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canMove)
-        {
-            Vector3 cameraForward = Camera.main.transform.forward;
-            this.gameObject.transform.Translate(cameraForward * Time.deltaTime * speed);
-            
-        }
+        
     }
 
     private void OnCollisionEnter(Collision otherObject)
@@ -63,10 +58,12 @@ public class move_forward : MonoBehaviour
         }
         else if (otherObject.gameObject.CompareTag("stopper"))
         {
+            Debug.Log("test");
             if (hasCollide == false)
             {
                 hasCollide = true;
-                canMove = false;
+                GameObject.Find("Player").GetComponent<SpaceshipMove>().canMove = false;
+                Debug.Log ("test");
                 soundWind.Stop();
                 soundCrash.Play();
                 img.enabled = true;
@@ -77,6 +74,7 @@ public class move_forward : MonoBehaviour
             }
         }
     }
+
     void SetCountText()
     {
         countText.text = "Rings: " + count.ToString();
@@ -85,8 +83,8 @@ public class move_forward : MonoBehaviour
 			winText.text = "Congrats! You win!";
             img.enabled = true;
             isImgOn = true;
-            canMove = false;
-			instructionText.text = "Click touchpad to try again";
+            GameObject.Find("Player").GetComponent<SpaceshipMove>().canMove = false;
+            instructionText.text = "Click touchpad to try again";
 			
 		}
     }
