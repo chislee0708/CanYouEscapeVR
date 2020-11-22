@@ -1069,7 +1069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canShoot: 0
   target: {fileID: 0}
-  shootRate: 5
+  shootRate: 0.000001
 --- !u!114 &368765444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1094,8 +1094,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 954.03674, y: 1, z: 3884.7883}
-  m_Center: {x: 9.420491, y: 0, z: 1941.894}
+  m_Size: {x: 1167.8356, y: 1, z: 3948.1897}
+  m_Center: {x: -97.4782, y: 0, z: 1973.5947}
 --- !u!4 &368765449 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: aed1c3a45687f4483868809932442c2d,
