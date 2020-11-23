@@ -29,6 +29,7 @@ public class ObjectGeneration : MonoBehaviour
 
         for (int i = 0; i < NumRing; i++)
         {
+            
             SpreadRings();
         }
 
