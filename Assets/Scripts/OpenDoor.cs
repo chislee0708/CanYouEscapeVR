@@ -20,6 +20,25 @@ public class OpenDoor : MonoBehaviour
         Debug.Log("door-start");
     }
 
+    void Update()
+    {
+        Debug.Log("1");
+        if (key.GetComponent<Renderer>().material.GetColor("_Color") == Color.red)
+        {
+            Debug.Log("Color");
+            DoorAnimation.gameObject.GetComponent<Animator>().enabled = true;
+            DoorAnimation.Play();
+            Debug.Log("door");
+
+            soundDoor = GetComponent<AudioSource>();
+            //soundDoor.clip = audio;
+
+
+            soundDoor.Play();
+        }
+    }
+
+
     void OnTriggerEnter(Collider colidedObj)
     {
         if (colidedObj.gameObject.tag == "key_tag") // if key is in the door
@@ -46,22 +65,17 @@ public class OpenDoor : MonoBehaviour
         
     }
 
-    void Update()
+    IEnumerator WaitForSound()
     {
-        Debug.Log("1");
-        if (key.GetComponent<Renderer>().material.GetColor("_Color") == Color.red)
-        {
-            Debug.Log("Color");
-            DoorAnimation.gameObject.GetComponent<Animator>().enabled = true;
-            DoorAnimation.Play();
-            Debug.Log("door");
-
-            soundDoor = GetComponent<AudioSource>();
-            //soundDoor.clip = audio;
+        yield return new WaitForSeconds(duration + 2);
+        Debug.Log("FinishAudio");
+        key.SetActive(false); //key is not visible
 
 
-            soundDoor.Play();
-        }
+        SceneManager.LoadScene(2);
+
     }
+
+
 
 }
