@@ -68,6 +68,3 @@ public class OpenDoor : MonoBehaviour
     }
 
 
-
-
-}
