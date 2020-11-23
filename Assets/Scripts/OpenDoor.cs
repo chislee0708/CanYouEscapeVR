@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OpenDoor : MonoBehaviour
 {
     public Animation DoorAnimation;
     public GameObject key;
-    //public LoadLevel loadLevel;
-    //public AudioClip audio;
     public AudioSource soundDoor;
+    private float duration;
+    public AudioClip audio;
 
     //public GameObject LoadingScreen;
 
@@ -16,7 +17,6 @@ public class OpenDoor : MonoBehaviour
     void Start()
     {
         DoorAnimation.gameObject.GetComponent<Animator>().enabled = false;
-        Debug.Log("door-start");
     }
 
     void OnTriggerEnter(Collider colidedObj)
@@ -26,22 +26,23 @@ public class OpenDoor : MonoBehaviour
             
             DoorAnimation.gameObject.GetComponent<Animator>().enabled = true;
             DoorAnimation.Play();
-            Debug.Log("door");
-            key.SetActive(false); //key is not visible
-
             soundDoor = GetComponent<AudioSource>();
-            //soundDoor.clip = audio;
-
-            
+            soundDoor.clip = audio;
+            key.SetActive(false); //key is not visible
+            duration = audio.length;
             soundDoor.Play();
-
-            //StartCoroutine(WaitForSound());
-
-            //GetComponent<Renderer>().material.color = Color.green; //change color to green
-
-
-
+            StartCoroutine(WaitForSound());
         }
+    }
+    IEnumerator WaitForSound()
+    {
+        yield return new WaitForSeconds(duration + 2);
+        Debug.Log("FinishAudio");
+        key.SetActive(false); //key is not visible
+
+        
+        SceneManager.LoadScene(2);
+
     }
 
 }
