@@ -9,6 +9,7 @@ public class OpenDoor : MonoBehaviour
     //public LoadLevel loadLevel;
     //public AudioClip audio;
     public AudioSource soundDoor;
+    public string CubeNumber;
 
     //public GameObject LoadingScreen;
 
@@ -41,6 +42,25 @@ public class OpenDoor : MonoBehaviour
 
 
 
+        }
+        
+    }
+
+    void Update()
+    {
+        Debug.Log("1");
+        if (key.GetComponent<Renderer>().material.GetColor("_Color") == Color.red)
+        {
+            Debug.Log("Color");
+            DoorAnimation.gameObject.GetComponent<Animator>().enabled = true;
+            DoorAnimation.Play();
+            Debug.Log("door");
+
+            soundDoor = GetComponent<AudioSource>();
+            //soundDoor.clip = audio;
+
+
+            soundDoor.Play();
         }
     }
 

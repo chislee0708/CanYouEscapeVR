@@ -41,7 +41,7 @@ public class GazeMenuPanel : MonoBehaviour
     {
         if( Button == "START")
         {
-            SceneManager.LoadScene("Scene1");
+            SceneManager.LoadScene("Scene1 - MainRoom");
         }
         else if( Button == "EXIT")
         {
