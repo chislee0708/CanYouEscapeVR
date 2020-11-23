@@ -8,6 +8,8 @@ TagManager:
   - pipe
   - key_tag
   - stopper
+  - pickUp
+  - finish
   layers:
   - Default
   - TransparentFX

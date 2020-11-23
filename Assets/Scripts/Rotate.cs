@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
+    public AudioSource sound;
 
     public Material originalMaterial;
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class Rotate : MonoBehaviour
     public void RotateObj()
     {
         transform.Rotate(0, 90, 0);
+        sound.Play();
     }
 
     public void Red()
