@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: [rotation_puzzle_tag, pipe, rotation_puzzle_tag, pipe, key_tag, stopper]
+  tags:
+  - rotation_puzzle_tag
+  - pipe
+  - key_tag
+  - stopper
+  - pickUp
+  - finish
   layers:
   - Default
   - TransparentFX
