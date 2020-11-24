@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHitCount : MonoBehaviour
 {
@@ -14,12 +16,15 @@ public class PlayerHitCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if(playerHitCount == 10){
+        //     SceneManager.LoadScene("");
+        // }
         
     }
 
     void OnTriggerEnter(Collider collidedObj)
     {
         playerHitCount++;
-        
+
     }
 }
