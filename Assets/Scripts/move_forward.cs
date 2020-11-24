@@ -2,97 +2,68 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 
 
 public class move_forward : MonoBehaviour
 {
-    public float speed = 10f;
-    public bool canMove = true;
     public Text countText;
-	public Text gameOverText;
-	public Text instructionText;
-	public Text winText;
-    public ParticleSystem effect;
-    public bool isImgOn;
-    public Image img;
-    public AudioSource soundWind;
+    public GameObject failText;
+    public GameObject winText;
     public AudioSource soundCrash;
     public AudioSource soundPickUp;
-    private int count;
+    public AudioSource bgMusic;
+    public int count;
     private bool hasCollide = false;
 
 
-    // Use this for initialization
+    // initialization
     void Start()
     {
-        effect.Stop();
         count = 0;
-        SetCountText();
-		gameOverText.text = "";
-		instructionText.text = "";
-		winText.text = "";
-        img.enabled = false;
-        isImgOn = false;
-        soundWind.Play();
+        failText.SetActive(false);
+        winText.SetActive(false);
         soundPickUp.Stop();
         soundCrash.Stop();
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (canMove)
-        {
-            Vector3 cameraForward = Camera.main.transform.forward;
-            this.gameObject.transform.Translate(cameraForward * Time.deltaTime * speed);
-            
-        }
+        bgMusic.Play();
     }
 
     private void OnCollisionEnter(Collision otherObject)
     {
-        if (otherObject.gameObject.CompareTag("pickUp"))
+        if (otherObject.gameObject.CompareTag("pickUp")) // if collided with frames
         {
             otherObject.gameObject.SetActive(false);
             count++;
-            SetCountText();
             soundPickUp.Play();
         }
-        else if (otherObject.gameObject.CompareTag("stopper"))
+        else if (otherObject.gameObject.CompareTag("stopper")) // if collided with red boxes
         {
+           
             if (hasCollide == false)
             {
                 hasCollide = true;
-                canMove = false;
-                soundWind.Stop();
+                GameObject.Find("Player").GetComponent<SpaceshipMove>().canMove = false; //stop moving
                 soundCrash.Play();
-                img.enabled = true;
-                isImgOn = true;
-                effect.Play();
-                gameOverText.text = "GAME OVER";
-                instructionText.text = "Click touchpad to try again";
+                failText.SetActive(true);
             }
         }
+        else if (otherObject.gameObject.CompareTag("finish"))
+        {
+            GameObject.Find("Player").GetComponent<SpaceshipMove>().canMove = false; //stop moving
+            GameObject.Find("Finish").SetActive(false);
+            if (count >= 10)
+            {
+                
+                GameObject.Find("Player").GetComponent<SpaceshipMove>().canMove = false; //stop moving
+                winText.SetActive(true); // show win text and menu
+                GameObject.Find("Finish").SetActive(false);
+            } else
+            {
+                failText.SetActive(true); // show game over text and menu
+            }
+            
+            
+        }
     }
-    void SetCountText()
-    {
-        countText.text = "Rings: " + count.ToString();
-		if(count >= 2)
-		{
-			winText.text = "Congrats! You win!";
-            img.enabled = true;
-            isImgOn = true;
-            canMove = false;
-			instructionText.text = "Click touchpad to try again";
-			
-		}
-    }
-    public void Restart()
-    
-    {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+
 }

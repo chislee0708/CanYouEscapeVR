@@ -14,7 +14,8 @@ public class ObjectGeneration : MonoBehaviour
     public float itemXSpread = 10;
     public float itemYSpread = 10;
     public float itemZSpread = 10;
-    // Start is called before the first frame update
+
+    // Generate boxes and frames
     void Start()
     {
         for(int i = 0; i < Numbox; i++)
@@ -29,12 +30,12 @@ public class ObjectGeneration : MonoBehaviour
 
         for (int i = 0; i < NumRing; i++)
         {
+            
             SpreadRings();
         }
 
     }
 
-    // Update is called once per frame
     void SpreadBoxes()
     {
         Vector3 randPosition = new Vector3(Random.Range(-itemXSpread, itemXSpread), Random.Range(-itemYSpread, itemYSpread), Random.Range(-itemZSpread, itemZSpread));
