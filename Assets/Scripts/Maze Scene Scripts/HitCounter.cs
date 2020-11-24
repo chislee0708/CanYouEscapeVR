@@ -12,15 +12,22 @@ public class HitCounter : MonoBehaviour
         hitCount = 0;
     }
 
-    void OnTriggerEnter(Collider collidedObj){
-        Debug.Log("Laser Rifle Hit");
-        hitCount++;
-    }
+    // void OnTriggerEnter(Collider collidedObj){
+    //     Debug.Log("Laser Rifle Hit");
+    //     hitCount++;
+    // }
+
     // Update is called once per frame
     void Update()
     {
         if(hitCount >= 4){
             GameObject.Find("AutoCannon").SetActive(false);
         }
+    }
+
+    public void incrementCount()
+    {
+        Debug.Log("TURRET HIT INCREMENTED");
+        hitCount++;
     }
 }

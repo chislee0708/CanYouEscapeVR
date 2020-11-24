@@ -2025,6 +2025,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AutoCannon
       objectReference: {fileID: 0}
+    - target: {fileID: 100038, guid: aed1c3a45687f4483868809932442c2d, type: 3}
+      propertyPath: m_TagString
+      value: Ammo
+      objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: aed1c3a45687f4483868809932442c2d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18
@@ -2069,6 +2073,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1548208976021372220, guid: aed1c3a45687f4483868809932442c2d,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerCollisionIgnore
+      objectReference: {fileID: 0}
     - target: {fileID: 3525078927468454874, guid: aed1c3a45687f4483868809932442c2d,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -2101,7 +2110,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canShoot: 0
   target: {fileID: 0}
-  shootRate: 0
 --- !u!114 &368765444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2217,8 +2225,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2473015, y: 3.5655026, z: 0.9145843}
-  m_Center: {x: 0.01612699, y: -0.097112894, z: 0.31231183}
+  m_Size: {x: 2, y: 3.5, z: 2}
+  m_Center: {x: -0.006699562, y: -0.097112894, z: 0.38142228}
 --- !u!114 &407281089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2972,8 +2980,8 @@ GameObject:
   m_Component:
   - component: {fileID: 558998010}
   m_Layer: 0
-  m_Name: Hand
-  m_TagString: Untagged
+  m_Name: Hand_Switch
+  m_TagString: PlayerCollisionIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10145,7 +10153,7 @@ GameObject:
   - component: {fileID: 1047965159}
   m_Layer: 0
   m_Name: Hand
-  m_TagString: Untagged
+  m_TagString: PlayerCollisionIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11144,7 +11152,7 @@ GameObject:
   - component: {fileID: 1367306984}
   m_Layer: 0
   m_Name: Maze
-  m_TagString: Untagged
+  m_TagString: PlayerCollisionIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116601,7 +116609,7 @@ GameObject:
   - component: {fileID: 1514145210}
   m_Layer: 0
   m_Name: Hand_Gun
-  m_TagString: Untagged
+  m_TagString: PlayerCollisionIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116756,8 +116764,8 @@ GameObject:
   - component: {fileID: 1584847089}
   - component: {fileID: 1584847090}
   m_Layer: 0
-  m_Name: Gun
-  m_TagString: Untagged
+  m_Name: Gun_Switch
+  m_TagString: PlayerCollisionIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117191,8 +117199,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 421.09674, y: 396.42624, z: 365.22284}
-  m_Center: {x: 10.548378, y: 315.80945, z: -125.825195}
+  m_Size: {x: 518.09033, y: 396.4262, z: 365.22284}
+  m_Center: {x: 3.6295414, y: 315.80945, z: -125.825195}
 --- !u!1001 &1689814695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118178,6 +118186,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 136576, guid: 860afac36dd565d47af534b643e4fa63, type: 3}
+      propertyPath: m_TagString
+      value: PlayerCollisionIgnore
+      objectReference: {fileID: 0}
     - target: {fileID: 173610, guid: 860afac36dd565d47af534b643e4fa63, type: 3}
       propertyPath: m_Name
       value: Endpoint
@@ -118257,7 +118269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0e2ec42c689c47988ef4c89d6610b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootRate: 0.5
   m_shotPrefab: {fileID: 136330, guid: 9a0c3383523899643a8d0661cfaca4e4, type: 3}
 --- !u!1 &1891504866
 GameObject:

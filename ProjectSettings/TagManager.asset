@@ -10,6 +10,8 @@ TagManager:
   - stopper
   - pickUp
   - finish
+  - PlayerCollisionIgnore
+  - Ammo
   layers:
   - Default
   - TransparentFX

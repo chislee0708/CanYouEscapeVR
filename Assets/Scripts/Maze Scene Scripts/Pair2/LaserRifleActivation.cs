@@ -3,22 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LaserRifleActivation : MonoBehaviour
-{
+{  
+    //cansShoot controls the AutoCannon's activation
     public bool canShoot;
     public GameObject target;
 
-    // public float shootRate;
-    // private float m_shootRateTimeStamp;
-
+    //AutoCannons are activated when the player triggers their collider
     void OnTriggerEnter(Collider colidedObj){
-        // Debug.Log(m_shootRateTimeStamp);
-        // if((Time.time > m_shootRateTimeStamp))
-        // {
-            target = colidedObj.gameObject;
-            // m_shootRateTimeStamp = Time.time + shootRate;
-            
-            canShoot = true;
-        // }
+        target = colidedObj.gameObject;
+        canShoot = true;
     }
 
     void OnTriggerExit(Collider colidedObj){
