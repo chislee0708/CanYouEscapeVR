@@ -24,6 +24,6 @@ public class PlayerHitCount : MonoBehaviour
     void OnTriggerEnter(Collider collidedObj)
     {
         playerHitCount++;
-        Debug.Log("Player Hit: " + playerHitCount);
+        Debug.Log("Player Hit: " + playerHitCount + " By: " + collidedObj);
     }
 }
