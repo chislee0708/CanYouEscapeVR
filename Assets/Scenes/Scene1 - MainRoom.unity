@@ -4663,6 +4663,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 695641130}
   m_maskType: 0
+  _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
 --- !u!222 &695641129
@@ -5580,7 +5581,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh113108
+  m_Name: pb_Mesh17522
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8187,6 +8188,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1645036716}
   m_maskType: 0
+  _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
 --- !u!222 &1645036715
@@ -9547,8 +9549,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   materials:
   - {fileID: 2100000, guid: 703179849ff60f742b27306a91ed05e8, type: 2}
-  - {fileID: 2100000, guid: b5d7dc6375d99664986d2655701a4526, type: 2}
   - {fileID: 2100000, guid: 12737025fcea3a54cb1cc1053b0e0c07, type: 2}
+  - {fileID: 2100000, guid: b5d7dc6375d99664986d2655701a4526, type: 2}
   - {fileID: 2100000, guid: 76dc4514b6cf1304e96076df36b65d09, type: 2}
   rend: {fileID: 2088470643}
 --- !u!114 &2088470646
