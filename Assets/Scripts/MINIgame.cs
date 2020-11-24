@@ -19,6 +19,6 @@ public class MINIgame : MonoBehaviour
     }
     public void StartMiniGame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("flightSimulator");
     }
 }
