@@ -16,9 +16,8 @@ public class Pair1_Activation : MonoBehaviour
     void Update()
     {
         //if all puzzle pieces solved correctly
-        if(GameObject.Find("Pair1_Pipe1").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pair1_Pipe2").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pair1_Pipe3").GetComponent<rotationPuzActive>().activator
-            && GameObject.Find("Pair1_Pipe4").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pair1_Pipe5").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pair1_Pipe6").GetComponent<rotationPuzActive>().activator
-            && GameObject.Find("Pair1_Pipe7").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pair1_Pipe8").GetComponent<rotationPuzActive>().activator)
+        if(GameObject.Find("Pair1_Pipe1").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pair1_Pipe2").GetComponent<rotationPuzActive>().activator 
+            && GameObject.Find("Pair1_Pipe3").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pair1_Pipe4").GetComponent<rotationPuzActive>().activator)
         {
             DoorAnim.SetBool("CloseDoor", false);
         }
