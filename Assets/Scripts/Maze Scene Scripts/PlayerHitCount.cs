@@ -16,15 +16,14 @@ public class PlayerHitCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if(playerHitCount == 10){
-        //     SceneManager.LoadScene("");
-        // }
-        
+        if(playerHitCount == 10){
+            SceneManager.LoadScene("Maze Menu");
+        }
     }
 
     void OnTriggerEnter(Collider collidedObj)
     {
         playerHitCount++;
-
+        Debug.Log("Player Hit: " + playerHitCount);
     }
 }
