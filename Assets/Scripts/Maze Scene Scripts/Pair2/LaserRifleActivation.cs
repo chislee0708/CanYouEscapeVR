@@ -7,19 +7,18 @@ public class LaserRifleActivation : MonoBehaviour
     public bool canShoot;
     public GameObject target;
 
-    public float shootRate;
-    private float m_shootRateTimeStamp;
+    // public float shootRate;
+    // private float m_shootRateTimeStamp;
 
     void OnTriggerEnter(Collider colidedObj){
-        Debug.Log("Laser Rifle Activated");
-        Debug.Log(m_shootRateTimeStamp);
-        if((Time.time > m_shootRateTimeStamp))
-        {
+        // Debug.Log(m_shootRateTimeStamp);
+        // if((Time.time > m_shootRateTimeStamp))
+        // {
             target = colidedObj.gameObject;
-            m_shootRateTimeStamp = Time.time + shootRate;
+            // m_shootRateTimeStamp = Time.time + shootRate;
             
             canShoot = true;
-        }
+        // }
     }
 
     void OnTriggerExit(Collider colidedObj){
