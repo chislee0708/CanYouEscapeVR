@@ -26,7 +26,8 @@ public class AutoLaserRifle : MonoBehaviour
         if (Physics.Raycast(ray, out hit, range))
         {
             Vector3 target_position = target.transform.position;
-            Debug.Log(target_position);
+            // Debug.Log("TARGET " + target_position);
+            // Debug.Log("PLAYER " + GameObject.Find("Player").transform.position);
             GameObject laser = GameObject.Instantiate(m_shotPrefab, transform.position, transform.rotation) as GameObject;
             laser.GetComponent<BeamBehavior>().setTarget(target_position);
             GameObject.Destroy(laser, 1f);

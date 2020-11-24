@@ -14,7 +14,7 @@ public class HandGunToggle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Select();
     }
 
     void Select()
@@ -24,12 +24,10 @@ public class HandGunToggle : MonoBehaviour
         {
             if( i == status)
             {
-                Debug.Log(handgun.gameObject.name + " Activated");
                 handgun.gameObject.SetActive(true);
             }
             else
             {
-                Debug.Log(handgun.gameObject.name + " Deactivated");
                 handgun.gameObject.SetActive(false);
             }
             i++;
