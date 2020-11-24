@@ -9,13 +9,12 @@ public class StartFlight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        movingObj.GetComponent<SpaceshipMove>().canMove = false;
+        movingObj.GetComponent<SpaceshipMove>().canMove = false; // prevent movement before start button pressed 
     }
 
-    // Update is called once per frame
     public void StartGame()
     {
-        movingObj.GetComponent<SpaceshipMove>().canMove = true;
+        movingObj.GetComponent<SpaceshipMove>().canMove = true; 
         GameObject.Find("Intro").SetActive(false);
     }
     public void HighlightButton()
