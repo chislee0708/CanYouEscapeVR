@@ -109,7 +109,7 @@ public class OpenDoor : MonoBehaviour
         key.SetActive(false); //key is not visible
 
         
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Scene1 - MainRoom");
 
         }
         
