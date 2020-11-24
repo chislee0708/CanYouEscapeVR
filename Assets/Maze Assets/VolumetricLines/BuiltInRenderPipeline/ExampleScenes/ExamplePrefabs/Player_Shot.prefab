@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8510295552943843763}
   - component: {fileID: 5521081293041064774}
   m_Layer: 0
-  m_Name: shot_prefab
+  m_Name: Player_Shot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,9 +113,9 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
+  m_Color: {r: 0.0747597, g: 0.754717, b: 0.112350635, a: 1}
+  m_Intensity: 0.25
+  m_Range: 0
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -189,5 +189,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.823515, y: 6.473255, z: 57.42848}
-  m_Center: {x: -0.6678697, y: -0.03080368, z: 24.452585}
+  m_Size: {x: 8.505678, y: 9.063792, z: 57.42848}
+  m_Center: {x: -0.65128803, y: -0.16440153, z: 24.452585}
