@@ -8,7 +8,7 @@ public class OpenDoor : MonoBehaviour
     public Animation DoorAnimation;
     public GameObject key;
     public AudioSource soundDoor;
-    public string CubeNumber;
+    public string CubeColor;
     private float duration;
     public AudioClip audio;
 
@@ -22,28 +22,76 @@ public class OpenDoor : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("1");
-        if (key.GetComponent<Renderer>().material.GetColor("_Color") == Color.red)
-        {
-            Debug.Log("Color");
-            DoorAnimation.gameObject.GetComponent<Animator>().enabled = true;
-            DoorAnimation.Play();
-            Debug.Log("door");
-
-            soundDoor = GetComponent<AudioSource>();
-            //soundDoor.clip = audio;
-
-
-            soundDoor.Play();
-        }
+        CheckColours();
     }
 
+
+    void CheckColours()
+    {
+        Debug.Log("1");
+        if (CubeColor == "Blue")
+        {
+            if (key.gameObject.GetComponent<Renderer>().material.color == Color.blue)
+            {
+                Debug.Log("Blue");
+                DoorAnimation.gameObject.GetComponent<Animator>().enabled = true;
+                DoorAnimation.Play();
+                soundDoor = GetComponent<AudioSource>();
+                soundDoor.clip = audio;
+                duration = audio.length;
+                soundDoor.Play();
+                soundDoor.Stop();
+            }
+        }
+        if (CubeColor == "Red")
+        {
+            if (key.GetComponent<Renderer>().material.GetColor("_Color") == Color.red)
+            {
+                Debug.Log("Red");
+                DoorAnimation.gameObject.GetComponent<Animator>().enabled = true;
+                DoorAnimation.Play();
+                soundDoor = GetComponent<AudioSource>();
+                soundDoor.clip = audio;
+                duration = audio.length;
+                soundDoor.Play();
+                soundDoor.Stop();
+            }
+        }
+
+        if (CubeColor == "Green")
+        {
+            if (key.GetComponent<Renderer>().material.GetColor("_Color") == Color.green)
+            {
+                Debug.Log("Green");
+                DoorAnimation.gameObject.GetComponent<Animator>().enabled = true;
+                DoorAnimation.Play();
+                soundDoor = GetComponent<AudioSource>();
+                soundDoor.clip = audio;
+                duration = audio.length;
+                soundDoor.Play();
+                soundDoor.Stop();
+            }
+        }
+        if (CubeColor == "White")
+        {
+            if (key.GetComponent<Renderer>().material.GetColor("_Color") == Color.white)
+            {
+                Debug.Log("Yellow");
+                DoorAnimation.gameObject.GetComponent<Animator>().enabled = true;
+                DoorAnimation.Play();
+                soundDoor = GetComponent<AudioSource>();
+                soundDoor.clip = audio;
+                duration = audio.length;
+                soundDoor.Play();
+                soundDoor.Stop();
+            }
+        }
+    }
 
     void OnTriggerEnter(Collider colidedObj)
     {
         if (colidedObj.gameObject.tag == "key_tag") // if key is in the door
-        {
-            
+        {            
             DoorAnimation.gameObject.GetComponent<Animator>().enabled = true;
             DoorAnimation.Play();
             soundDoor = GetComponent<AudioSource>();
