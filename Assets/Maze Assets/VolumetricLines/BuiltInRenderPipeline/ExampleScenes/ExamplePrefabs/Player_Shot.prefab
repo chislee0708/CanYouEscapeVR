@@ -177,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_target: {x: 0, y: 0, z: 0}
   collisionExplosion: {fileID: 0}
-  speed: 100
+  speed: 50
 --- !u!65 &5521081293041064774
 BoxCollider:
   m_ObjectHideFlags: 0

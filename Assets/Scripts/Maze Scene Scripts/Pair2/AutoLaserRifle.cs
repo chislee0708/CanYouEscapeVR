@@ -25,6 +25,7 @@ public class AutoLaserRifle : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, range))
         {
+            Debug.Log("Ray " + ray);
             Vector3 target_position = target.transform.position;
             // Debug.Log("TARGET " + target_position);
             // Debug.Log("PLAYER " + GameObject.Find("Player").transform.position);

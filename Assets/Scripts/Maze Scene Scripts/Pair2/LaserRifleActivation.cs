@@ -12,7 +12,7 @@ public class LaserRifleActivation : MonoBehaviour
 
     void OnTriggerEnter(Collider colidedObj){
         Debug.Log("Laser Rifle Activated");
-
+        Debug.Log(m_shootRateTimeStamp);
         if((Time.time > m_shootRateTimeStamp))
         {
             target = colidedObj.gameObject;
