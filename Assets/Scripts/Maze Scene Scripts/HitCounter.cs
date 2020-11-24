@@ -11,12 +11,7 @@ public class HitCounter : MonoBehaviour
     {
         hitCount = 0;
     }
-
-    // void OnTriggerEnter(Collider collidedObj){
-    //     Debug.Log("Laser Rifle Hit");
-    //     hitCount++;
-    // }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -27,7 +22,6 @@ public class HitCounter : MonoBehaviour
 
     public void incrementCount()
     {
-        Debug.Log("TURRET HIT INCREMENTED");
         hitCount++;
     }
 }

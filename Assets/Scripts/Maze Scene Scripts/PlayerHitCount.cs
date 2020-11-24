@@ -21,7 +21,6 @@ public class PlayerHitCount : MonoBehaviour
         {   
             //Player dies after being hit 10 times and is brought to the Level Failed Screen
             //SceneManager.LoadScene("Maze Menu");
-            Debug.Log("COUNT REACHED!!!!");
         }
     }
 
