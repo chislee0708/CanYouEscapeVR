@@ -21,10 +21,10 @@ public class SceneConroller : MonoBehaviour
         }
 
         //Blue Portal
-        //if (DoorColor == "Blue")
-        //{
-        //    SceneManager.LoadScene("");
-        //}
+        if (DoorColor == "Blue")
+        {
+            SceneManager.LoadScene("Maze Scene");
+        }
 
         //Red Portal
         if (DoorColor == "Red")
