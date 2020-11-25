@@ -23,7 +23,7 @@ using System.Linq;
         //private float yOffset = 0.5f;
         //private float playerRadius = 0.3f;
     
-        public float timeLeft = 100.0f; // for now uses a timer to switch beetenn objects taht player can hold randomly
+        public float timeLeft = 15.0f; // for now uses a timer to switch beetenn objects taht player can hold randomly
         //public Rigidbody GazeObjects[i] = Objects[Random.Range(0, 4)];
         // will try to implement line of sight perhpas if workaround works
         // public Rigidbody GazeObjects[i] = Objects[i]; 
@@ -41,17 +41,19 @@ using System.Linq;
 
         void Update()
         {   
-            while(timeLeft > 0)
+            /*while(timeLeft > 0)
             {    
                 timeLeft -= Time.deltaTime;
-            }
+            }*/
+            timeLeft -= Time.deltaTime;
             //Debug.Log(timeLeft);
             if(timeLeft <= 0)
             {
                 //ingredients[x-1].GetComponent<Renderer>().material.color = GetComponent<Renderer>().material.color;
-                ingredients[x-1].GetComponent<Renderer>().material.color = col;
+                ingredients[x].GetComponent<Renderer>().material.color = col;
                 ChangeVal();
                 ChooseIngredient();
+                Debug.Log("Ingredient " + x + " can be added");
             }
             
         }
@@ -59,19 +61,19 @@ using System.Linq;
         void ChooseIngredient()
         {
                 //GetComponent<Renderer>().material.color = ingredients[x-1].GetComponent<Renderer>().material.color;
-                col = ingredients[x-1].GetComponent<Renderer>().material.color;
-                ingredients[x-1].GetComponent<Renderer>().material.color = Color.red;
+                col = ingredients[x].GetComponent<Renderer>().material.color;
+                ingredients[x].GetComponent<Renderer>().material.color = Color.red;
         }
 
         void ChangeVal()
         {
-            if(x == 5)
+            if(x >= 5)
             {
-                x = 1;
+                x = 0;
             }
             else
             {
-                x++;
+                x += 1;
             }
             timeLeft = 20.0f;
         }
@@ -135,7 +137,7 @@ using System.Linq;
         {
             if(x != null )
             {
-                //GazeObjects[x].transform.parent = Holder.transform;
+                GazeObjects[x].transform.parent = Holder.transform;
                 GazeObjects[x].transform.localPosition = Holder.transform.localPosition;
 
                 //TheNodes.SetActive(true);

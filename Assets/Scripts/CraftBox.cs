@@ -65,7 +65,8 @@ public class CraftBox : MonoBehaviour
         {
             combination += ing;
         }
-        if (combination == "ing1ing2ing3" || combination == "ing1ing3ing2" || combination == "ing2ing1ing3" || combination == "ing2ing3ing1" || combination == "ing3ing1ing2" || combination == "ing3ing2ing1")
+        //if (combination == "ing1ing2ing3" || combination == "ing1ing3ing2" || combination == "ing2ing1ing3" || combination == "ing2ing3ing1" || combination == "ing3ing1ing2" || combination == "ing3ing2ing1")
+        if(combination == "ing1ing2")
         {
             return true;
         }
@@ -93,7 +94,7 @@ public class CraftBox : MonoBehaviour
         ings[0].transform.position = new Vector3(-6.8f, 3.15f, 10f);
         ings[1].transform.position = new Vector3(6.5f, 2.125f, 14f);
         ings[2].transform.position = new Vector3(-6.8f, 3.15f, 1.5f);
-        ings[3].transform.position = new Vector3(3.4f, 2.125f, 14f);
+        ings[3].transform.position = new Vector3(0f, 0.125f, 7);
         ings[4].transform.position = new Vector3(5.75f, 2.125f, 14f);
 
         ingTags.Clear(); // clears list of ing tags
