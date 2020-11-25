@@ -10,28 +10,27 @@ public class SceneConroller : MonoBehaviour
 
     private void Start()
     {
-        //nextScenceLoad = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        //Green Portal
         if (DoorColor == "Green")
         {
             SceneManager.LoadScene("New-Scene3-Alyona");
         }
 
-        //Blue
+        //Blue Portal
         //if (DoorColor == "Blue")
         //{
         //    SceneManager.LoadScene("");
         //}
 
-        //Red
+        //Red Portal
         //if (DoorColor == "Red")
         //{
         //    SceneManager.LoadScene("");
         //}
 
-        //SceneManager.LoadScene(nextScenceLoad);
     }
 }
