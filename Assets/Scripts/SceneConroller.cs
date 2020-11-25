@@ -27,10 +27,10 @@ public class SceneConroller : MonoBehaviour
         //}
 
         //Red Portal
-        //if (DoorColor == "Red")
-        //{
-        //    SceneManager.LoadScene("");
-        //}
+        if (DoorColor == "Red")
+        {
+            SceneManager.LoadScene("Scene5-Troy");
+        }
 
     }
 }
