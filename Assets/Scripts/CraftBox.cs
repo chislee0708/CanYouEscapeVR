@@ -90,9 +90,9 @@ public class CraftBox : MonoBehaviour
             ings[i].SetActive(true);
         }
         // ings assigned to old locations 
-        ings[0].transform.position = new Vector3(4.3f, 2.125f, 14f);
+        ings[0].transform.position = new Vector3(-6.8f, 3.15f, 10f);
         ings[1].transform.position = new Vector3(6.5f, 2.125f, 14f);
-        ings[2].transform.position = new Vector3(4.8f, 2.125f, 14f);
+        ings[2].transform.position = new Vector3(-6.8f, 3.15f, 1.5f);
         ings[3].transform.position = new Vector3(3.4f, 2.125f, 14f);
         ings[4].transform.position = new Vector3(5.75f, 2.125f, 14f);
 
