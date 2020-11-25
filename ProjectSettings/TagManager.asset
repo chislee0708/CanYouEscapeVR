@@ -13,6 +13,7 @@ TagManager:
   - PlayerCollisionIgnore
   - Ammo
   - Hand_Gun
+  - PlayerHitResetter
   layers:
   - Default
   - TransparentFX

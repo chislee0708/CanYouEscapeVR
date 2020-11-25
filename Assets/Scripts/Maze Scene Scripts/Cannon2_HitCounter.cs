@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitCounter : MonoBehaviour
+public class Cannon2_HitCounter : MonoBehaviour
 {
     private int hitCount;
     public string cannonName;

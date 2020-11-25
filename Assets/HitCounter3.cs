@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitCounter : MonoBehaviour
+public class HitCounter3 : MonoBehaviour
 {
     private int hitCount;
     public string cannonName;
@@ -21,9 +21,8 @@ public class HitCounter : MonoBehaviour
     void Update()
     {
         if(hitCount >= 4){
-            GameObject.Find(doorName).GetComponent<Pair1_Activation>().shutTurretDown();
+            GameObject.Find(doorName).GetComponent<Pair3_Activation>().shutTurretDown();
             GameObject.Find(cannonName).SetActive(false);
-            scriptLink.ChangeStatus();
         }
     }
 
