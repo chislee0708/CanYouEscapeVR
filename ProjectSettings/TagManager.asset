@@ -12,6 +12,7 @@ TagManager:
   - finish
   - PlayerCollisionIgnore
   - Ammo
+  - Hand_Gun
   layers:
   - Default
   - TransparentFX

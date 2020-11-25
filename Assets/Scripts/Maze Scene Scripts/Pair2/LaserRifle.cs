@@ -9,7 +9,7 @@ public class LaserRifle : MonoBehaviour
     HitCounter scriptLink;
 
     RaycastHit hit;
-    float range = 150.0f;
+    float range = 200.0f;
     private float nextFireTimeStamp;
 
     void Start()
@@ -35,9 +35,6 @@ public class LaserRifle : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, range))
         {
-            //HERE
-            Debug.Log(hit.collider.gameObject.tag);
-            
             if(hit.collider.gameObject.tag == "Ammo")
             {
                 //If ray hits Ammo Object, Ammo's HitCount is incremented.

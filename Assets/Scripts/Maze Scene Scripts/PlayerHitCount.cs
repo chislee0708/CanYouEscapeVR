@@ -17,6 +17,9 @@ public class PlayerHitCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //**************//
+        Debug.Log("COUNT: " +  playerHitCount);
+        
         if(playerHitCount == 10)
         {   
             //Player dies after being hit 10 times and is brought to the Level Failed Screen

@@ -33,4 +33,17 @@ public class HandGunToggle : MonoBehaviour
             i++;
         }
     }
+
+    //This will allow Player to toggle between Gun and Hand immediately
+    public void ChangeStatus()
+    {
+        if(status == 0)
+        {
+            status = 1;
+        } 
+        else
+        {
+            status = 0;
+        }
+    }
 }
