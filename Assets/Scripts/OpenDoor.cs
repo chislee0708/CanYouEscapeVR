@@ -8,6 +8,7 @@ public class OpenDoor : MonoBehaviour
     public Animation DoorAnimation;
     public GameObject key;
     public AudioSource soundDoor;
+    public string CubeColor;
     private float duration;
     public AudioClip audio;
 
@@ -19,11 +20,77 @@ public class OpenDoor : MonoBehaviour
         DoorAnimation.gameObject.GetComponent<Animator>().enabled = false;
     }
 
+    void Update()
+    {
+        CheckColours();
+    }
+
+
+void CheckColours()
+    {
+        Debug.Log("1");
+        soundDoor.Stop();
+        if (CubeColor == "Blue")
+        {
+            if (key.gameObject.GetComponent<Renderer>().material.color == Color.blue)
+            {
+                Debug.Log("Blue");
+                if (soundDoor.isPlaying == false)
+                {
+                    soundDoor.Play();
+                }
+                DoorAnimation.gameObject.GetComponent<Animator>().enabled = true;
+                DoorAnimation.Play();
+            }
+        }
+        if (CubeColor == "Red")
+        {
+            if (key.GetComponent<Renderer>().material.GetColor("_Color") == Color.red)
+            {
+                Debug.Log("Red");
+                if (soundDoor.isPlaying == false)
+                {
+                    soundDoor.Play();
+                }
+                DoorAnimation.gameObject.GetComponent<Animator>().enabled = true;
+                DoorAnimation.Play();
+            }
+        }
+
+        if (CubeColor == "Green")
+        {
+            if (key.GetComponent<Renderer>().material.GetColor("_Color") == Color.green)
+            {
+                Debug.Log("Green");
+                if (soundDoor.isPlaying == false)
+                {
+                    soundDoor.Play();
+                }
+                DoorAnimation.gameObject.GetComponent<Animator>().enabled = true;
+                DoorAnimation.Play();
+            }
+        }
+        if (CubeColor == "White")
+        {
+            if (key.GetComponent<Renderer>().material.GetColor("_Color") == Color.white)
+            {
+                Debug.Log("Yellow");
+                if (soundDoor.isPlaying == false)
+                {
+                    soundDoor.Play();
+                }
+                DoorAnimation.gameObject.GetComponent<Animator>().enabled = true;
+                DoorAnimation.Play();
+            }
+        }
+    }
+
     void OnTriggerEnter(Collider colidedObj)
     {
+        
+           
         if (colidedObj.gameObject.tag == "key_tag") // if key is in the door
-        {
-            
+        {            
             DoorAnimation.gameObject.GetComponent<Animator>().enabled = true;
             DoorAnimation.Play();
             soundDoor = GetComponent<AudioSource>();
@@ -41,8 +108,10 @@ public class OpenDoor : MonoBehaviour
         key.SetActive(false); //key is not visible
 
         
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Scene1 - MainRoom");
 
+        }
+        
     }
 
-}
+
