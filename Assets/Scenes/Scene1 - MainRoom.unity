@@ -3582,6 +3582,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 12737025fcea3a54cb1cc1053b0e0c07, type: 2}
   - {fileID: 2100000, guid: 76dc4514b6cf1304e96076df36b65d09, type: 2}
   rend: {fileID: 490048112}
+  audioSource: {fileID: 1505098910}
+  cube: White
 --- !u!114 &490048110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5276,6 +5278,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1589511912}
+  - {fileID: 1505098909}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6770,7 +6773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DoorAnimation: {fileID: 1243435892}
   key: {fileID: 2105818821}
-  soundDoor: {fileID: 1243435891}
+  soundDoor: {fileID: 1505098910}
   CubeColor: Red
   audio: {fileID: 8300000, guid: 1c37dfd5009c2234eac1e52777df5543, type: 3}
 --- !u!95 &1243435890
@@ -7058,7 +7061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DoorAnimation: {fileID: 1275108620}
   key: {fileID: 490048107}
-  soundDoor: {fileID: 1275108621}
+  soundDoor: {fileID: 1505098910}
   CubeColor: White
   audio: {fileID: 8300000, guid: 1c37dfd5009c2234eac1e52777df5543, type: 3}
 --- !u!95 &1275108619
@@ -7246,7 +7249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DoorAnimation: {fileID: 1302768630}
   key: {fileID: 2088470640}
-  soundDoor: {fileID: 1302768631}
+  soundDoor: {fileID: 1505098910}
   CubeColor: Green
   audio: {fileID: 8300000, guid: 1c37dfd5009c2234eac1e52777df5543, type: 3}
 --- !u!95 &1302768629
@@ -7689,6 +7692,133 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d208fd70871d67b4db83dadcd8ff1dbb, type: 3}
   m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &1505098908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1505098909}
+  - component: {fileID: 1505098910}
+  m_Layer: 0
+  m_Name: Dooropen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1505098909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505098908}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 754181419}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1505098910
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505098908}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1c37dfd5009c2234eac1e52777df5543, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -8369,7 +8499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DoorAnimation: {fileID: 1728374253}
   key: {fileID: 2111180419}
-  soundDoor: {fileID: 1728374254}
+  soundDoor: {fileID: 1505098910}
   CubeColor: Blue
   audio: {fileID: 8300000, guid: 1c37dfd5009c2234eac1e52777df5543, type: 3}
 --- !u!95 &1728374252
@@ -9553,6 +9683,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: b5d7dc6375d99664986d2655701a4526, type: 2}
   - {fileID: 2100000, guid: 76dc4514b6cf1304e96076df36b65d09, type: 2}
   rend: {fileID: 2088470643}
+  audioSource: {fileID: 1505098910}
+  cube: Green
 --- !u!114 &2088470646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9572,6 +9704,17 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2088470645}
           m_MethodName: OnClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2088470645}
+          m_MethodName: SoundCheck
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -9635,6 +9778,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 12737025fcea3a54cb1cc1053b0e0c07, type: 2}
   - {fileID: 2100000, guid: 76dc4514b6cf1304e96076df36b65d09, type: 2}
   rend: {fileID: 2105818826}
+  audioSource: {fileID: 1505098910}
+  cube: Red
 --- !u!114 &2105818824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9791,6 +9936,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 12737025fcea3a54cb1cc1053b0e0c07, type: 2}
   - {fileID: 2100000, guid: 76dc4514b6cf1304e96076df36b65d09, type: 2}
   rend: {fileID: 2111180424}
+  audioSource: {fileID: 1505098910}
+  cube: Blue
 --- !u!114 &2111180422
 MonoBehaviour:
   m_ObjectHideFlags: 0
