@@ -6,6 +6,9 @@ public class ChangeColorOnClick : MonoBehaviour
 {
     public Material[] materials; // Input of material colors
     public Renderer rend; //Rendering Object
+    public AudioSource audioSource;
+    public string cube;
+
     // Start is called before the first frame update
 
     private int index = 1;
@@ -19,7 +22,7 @@ public class ChangeColorOnClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void OnClick()
@@ -33,4 +36,5 @@ public class ChangeColorOnClick : MonoBehaviour
         }
         rend.sharedMaterial = materials[index - 1];
     }
+
 }
