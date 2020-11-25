@@ -11,6 +11,7 @@ public class VRLookWalk : MonoBehaviour
     public float bottom = 50.0f;
     public float speed = 5.0f;
     public bool moveForward;
+    public AudioSource audioSource;
 
     private CharacterController cc;
 
@@ -26,10 +27,17 @@ public class VRLookWalk : MonoBehaviour
         if (vrCamera.eulerAngles.x >= toggleAngle && vrCamera.eulerAngles.x < bottom)
         {
             moveForward = true;
+            if(audioSource.isPlaying == false)
+            {
+                audioSource.volume = Random.Range(0.8f, 1);
+                audioSource.pitch = Random.Range(0.8f, 1.1f);
+                audioSource.Play();
+            }
         }
         else
         {
             moveForward = false;
+            audioSource.Stop();
         }
 
         if (moveForward)

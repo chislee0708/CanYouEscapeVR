@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - rotation_puzzle_tag
+  - pipe
+  - key_tag
+  - stopper
+  - pickUp
+  - finish
+  - PlayerCollisionIgnore
+  - Ammo
+  - Hand_Gun
+  - PlayerHitResetter
+  - Ammo2
   layers:
   - Default
   - TransparentFX
