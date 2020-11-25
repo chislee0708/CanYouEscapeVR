@@ -18,7 +18,7 @@ public class FinalInstrC : MonoBehaviour
     }
     public void Exit()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("Scene1 - MainRoom");
     }
     public void HighlightButton()
     {
