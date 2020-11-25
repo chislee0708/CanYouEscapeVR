@@ -10,6 +10,11 @@ TagManager:
   - stopper
   - pickUp
   - finish
+  - PlayerCollisionIgnore
+  - Ammo
+  - Hand_Gun
+  - PlayerHitResetter
+  - Ammo2
   - ing1
   - ing2
   - ing3

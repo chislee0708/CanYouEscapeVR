@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHitCount : MonoBehaviour
 {
+    //playerHitCount tracks the number of times the player has been hit by a "laser"
     public int playerHitCount;
     // Start is called before the first frame update
     void Start()
@@ -16,15 +17,26 @@ public class PlayerHitCount : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if(playerHitCount == 10){
-        //     SceneManager.LoadScene("");
-        // }
-        
+        if(playerHitCount == 10)
+        {   
+            //Player dies after being hit 10 times and is brought to the Level Failed Screen
+            SceneManager.LoadScene("Maze Menu");
+        }
     }
 
+    public void incrementCount(){
+        playerHitCount++;
+    }
+
+    // public void resetCount(){
+    //     playerHitCount = 0;
+    // }
     void OnTriggerEnter(Collider collidedObj)
     {
-        playerHitCount++;
-
+        if(collidedObj.gameObject.tag == "PlayerHitResetter")
+        {
+            playerHitCount = 0;
+            collidedObj.gameObject.SetActive(false);
+        }
     }
 }

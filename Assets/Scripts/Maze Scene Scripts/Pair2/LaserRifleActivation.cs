@@ -3,26 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LaserRifleActivation : MonoBehaviour
-{
+{  
+    HandGunToggle scriptLink;
+    //cansShoot controls the AutoCannon's activation
     public bool canShoot;
     public GameObject target;
 
-    public float shootRate;
-    private float m_shootRateTimeStamp;
-
+    void Start()
+    {
+        scriptLink = GameObject.FindGameObjectWithTag("Hand_Gun").GetComponent<HandGunToggle>();
+    }
+    //AutoCannons are activated when the player triggers their collider
     void OnTriggerEnter(Collider colidedObj){
-        Debug.Log("Laser Rifle Activated");
-
-        if((Time.time > m_shootRateTimeStamp))
-        {
-            target = colidedObj.gameObject;
-            m_shootRateTimeStamp = Time.time + shootRate;
-            
-            canShoot = true;
-        }
+        target = colidedObj.gameObject;
+        scriptLink.ChangeStatus();
+        canShoot = true;
     }
 
     void OnTriggerExit(Collider colidedObj){
+        scriptLink.ChangeStatus();
         canShoot = false;
     }
 }

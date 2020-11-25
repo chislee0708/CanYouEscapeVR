@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pair3_Activation : MonoBehaviour
 {
     Animator DoorAnim;
+    bool TurretActive;
 
     // Start is called before the first frame update
     void Start()
@@ -28,4 +29,5 @@ public class Pair3_Activation : MonoBehaviour
             DoorAnim.SetBool("CloseDoor", true);
         }
     }
+    
 }
