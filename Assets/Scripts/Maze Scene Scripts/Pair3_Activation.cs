@@ -11,7 +11,6 @@ public class Pair3_Activation : MonoBehaviour
     void Start()
     {
         DoorAnim = GetComponent<Animator>();
-        TurretActive = true;
     }
 
     // Update is called once per frame
@@ -20,8 +19,7 @@ public class Pair3_Activation : MonoBehaviour
         //if all puzzle pieces solved correctly
         if(GameObject.Find("Pair3_Pipe1").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pair3_Pipe2").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pair3_Pipe3").GetComponent<rotationPuzActive>().activator
             && GameObject.Find("Pair3_Pipe4").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pair3_Pipe5").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pair3_Pipe6").GetComponent<rotationPuzActive>().activator
-            && GameObject.Find("Pair3_Pipe7").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pair3_Pipe8").GetComponent<rotationPuzActive>().activator
-            && !TurretActive)
+            && GameObject.Find("Pair3_Pipe7").GetComponent<rotationPuzActive>().activator && GameObject.Find("Pair3_Pipe8").GetComponent<rotationPuzActive>().activator)
         {
             DoorAnim.SetBool("CloseDoor", false);
         }
@@ -31,9 +29,5 @@ public class Pair3_Activation : MonoBehaviour
             DoorAnim.SetBool("CloseDoor", true);
         }
     }
-
-    public void shutTurretDown()
-    {
-        TurretActive = false;
-    }
+    
 }

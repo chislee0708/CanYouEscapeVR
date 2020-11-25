@@ -8,21 +8,24 @@ public class HitCounter3 : MonoBehaviour
     public string cannonName;
     public string doorName;
 
-    HandGunToggle scriptLink;
+    HandGunToggle toggleScriptLink;
+
 
     // Start is called before the first frame update
     void Start()
     {
         hitCount = 0;
-        scriptLink = GameObject.FindGameObjectWithTag("Hand_Gun").GetComponent<HandGunToggle>();
+        toggleScriptLink = GameObject.FindGameObjectWithTag("Hand_Gun").GetComponent<HandGunToggle>();
     }
     
     // Update is called once per frame
     void Update()
     {
-        if(hitCount >= 4){
-            GameObject.Find(doorName).GetComponent<Pair3_Activation>().shutTurretDown();
+        //Turret2 is a bit harder to destroy
+        if(hitCount >= 6){
             GameObject.Find(cannonName).SetActive(false);
+            GameObject.Find(doorName).GetComponent<Door3_Activation>().activateDoor();
+            toggleScriptLink.ChangeStatus();
         }
     }
 

@@ -6,7 +6,8 @@ public class LaserRifle : MonoBehaviour
 {
     public GameObject m_shotPrefab;
 
-    HitCounter scriptLink;
+    HitCounter scriptLink1;
+    HitCounter3 scriptLink2;
 
     RaycastHit hit;
     float range = 200.0f;
@@ -15,7 +16,8 @@ public class LaserRifle : MonoBehaviour
     void Start()
     {
         //Creates a reference to the Ammo Object's HitCount script
-        scriptLink = GameObject.FindGameObjectWithTag("Ammo").GetComponent<HitCounter>();
+        scriptLink1 = GameObject.FindGameObjectWithTag("Ammo").GetComponent<HitCounter>();
+        scriptLink2 = GameObject.FindGameObjectWithTag("Ammo2").GetComponent<HitCounter3>();
     }
 
     void Update()
@@ -38,12 +40,16 @@ public class LaserRifle : MonoBehaviour
             if(hit.collider.gameObject.tag == "Ammo")
             {
                 //If ray hits Ammo Object, Ammo's HitCount is incremented.
-                scriptLink.incrementCount();
+                scriptLink1.incrementCount();
+            }
+            else if(hit.collider.gameObject.tag == "Ammo2")
+            {
+                scriptLink2.incrementCount();
             }
 
             GameObject laser = GameObject.Instantiate(m_shotPrefab, transform.position, transform.rotation) as GameObject;
             laser.GetComponent<BeamBehavior>().setTarget(hit.point);
-            GameObject.Destroy(laser, 2f);
+            GameObject.Destroy(laser, 0.25f);
         }
     }
 }

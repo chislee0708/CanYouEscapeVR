@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Door3_Activation : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Animator DoorAnim;
+
     void Start()
     {
-        
+        DoorAnim = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public void activateDoor()
     {
-        
+        DoorAnim.SetBool("CloseDoor", false);
     }
 }

@@ -14,6 +14,7 @@ TagManager:
   - Ammo
   - Hand_Gun
   - PlayerHitResetter
+  - Ammo2
   layers:
   - Default
   - TransparentFX
