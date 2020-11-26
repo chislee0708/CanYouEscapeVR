@@ -2,9 +2,9 @@
 Group 4 VR game with google cardboard
 
 ### Team Members: 
- Brian Chambers
- Troy Daniello
- Alyona Karmazin
+ Brian Chambers,
+ Troy Daniello,
+ Alyona Karmazin,
  Chi Shing Lee
  
 ### Description:
