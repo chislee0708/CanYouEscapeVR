@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &47824279
 RectTransform:
   m_ObjectHideFlags: 0
@@ -837,8 +837,10 @@ MonoBehaviour:
   m_text: 'Welcome to the tutorial!
 
 
-    Tip 1 : Gaze at the object to interact
-    with them.
+    Tip 1 : Try to gaze at the sphere to interact
+    with it.
+
+    Tip 2: Place the sphere on top of the plane.
 
 '
   m_isRightToLeft: 0
