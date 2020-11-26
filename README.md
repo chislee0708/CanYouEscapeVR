@@ -18,7 +18,7 @@ Group 4 VR game with google cardboard
  
 
 ### Unity Settings
- - Project Setting 
+ Project Setting 
   - Graphics API - OpenGLES2
  - Minimum API Level - Android 4.4 'KitKat' (API level 19)
  
