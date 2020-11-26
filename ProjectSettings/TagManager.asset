@@ -15,6 +15,11 @@ TagManager:
   - Hand_Gun
   - PlayerHitResetter
   - Ammo2
+  - ing1
+  - ing2
+  - ing3
+  - ing4
+  - ing5
   layers:
   - Default
   - TransparentFX
