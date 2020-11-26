@@ -9,6 +9,9 @@ Group 4 VR game with google cardboard
  
 ### Description:
  Can You Escape? Is a Virtual Reality game built for usage with the Google Cardboard Virtual Reality viewer. It is an ‘Escape the Room’ puzzle game with mystery sci-fi themes. Can you solve the puzzles? Can you Escape?
+ 
+### [Application Download](https://github.com/chislee0708/CanYouEscapeVR-Applications)
+ 
 
 ### Unity Settings
  - Project Setting 
