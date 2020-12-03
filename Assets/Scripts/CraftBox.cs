@@ -46,7 +46,7 @@ public class CraftBox : MonoBehaviour
                 if (isComplete == true)
                 {
                     // make medpack object appear
-                    medpack.transform.position = new Vector3(2f, 2f, 4.5f);
+                    medpack.transform.position = new Vector3(2f, 1.5f, 4.5f);
                     // Destroys craftbox as puzzle is complete
                     GameObject.Destroy(this.gameObject);
                 }
@@ -93,7 +93,7 @@ public class CraftBox : MonoBehaviour
         // ings assigned to old locations 
         ings[0].transform.position = new Vector3(-6.8f, 3.15f, 10f);
         ings[1].transform.position = new Vector3(6.5f, 2.125f, 14f);
-        ings[2].transform.position = new Vector3(-6.8f, 3.15f, 1.5f);
+        ings[2].transform.position = new Vector3(-6.8f, 3.15f, 3f);
         ings[3].transform.position = new Vector3(0f, 0.125f, 7);
         ings[4].transform.position = new Vector3(5.75f, 2.125f, 14f);
 
