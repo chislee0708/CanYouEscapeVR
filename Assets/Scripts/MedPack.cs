@@ -26,11 +26,11 @@ public class MedPack : MonoBehaviour
         this.transform.position = new Vector3(2f, 1.5f, 4.5f);
             if(this.transform.position == new Vector3(2f, 1.5f, 4.5f));
             {
+                FinishedPuzzle = true;
                 RemoveIngredients(FinishedPuzzle);
                 timer -= Time.deltaTime;
                 if(timer <= 0f)
                 {
-                    FinishedPuzzle = true;
                     //boolean.GetComponent<Boolean>().Set(FinishedPuzzle);
                     GameObject.Destroy(this.gameObject);
                     door.SetActive(false);

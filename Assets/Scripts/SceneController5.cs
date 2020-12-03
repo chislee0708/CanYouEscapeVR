@@ -19,6 +19,6 @@ public class SceneController5 : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("Scene1-MainRoom");
+        SceneManager.LoadScene("Scene1 - MainRoom"); 
     }
 }
