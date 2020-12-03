@@ -23,13 +23,6 @@ public class GazeColorTimer : MonoBehaviour
 
         RadialProgress.GetComponent<Image>().fillAmount = Sec;
 
-        /*
-        if(Sec >= 1f)
-        {
-            
-            // GazeMove();
-        }
-        */
     }
 
     public void Resetinator()

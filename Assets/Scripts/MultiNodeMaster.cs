@@ -14,7 +14,7 @@ using System.Linq;
         public GameObject CraftBox;
         public Color col;
        // private Renderer rend;
-        public int x = 1 ; // int of obj that will be found with raycast for iongredient
+        public int x = 1;
         
         
         // Tried to use raycasting to selecet ingredient for gazetimer but didn't work after many attempts to modify it
@@ -46,7 +46,6 @@ using System.Linq;
                 timeLeft -= Time.deltaTime;
             }*/
             timeLeft -= Time.deltaTime;
-            //Debug.Log(timeLeft);
             if(timeLeft <= 0)
             {
                 //ingredients[x-1].GetComponent<Renderer>().material.color = GetComponent<Renderer>().material.color;

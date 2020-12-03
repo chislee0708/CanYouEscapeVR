@@ -37,4 +37,6 @@ public class ChangeColorOnClick : MonoBehaviour
         rend.sharedMaterial = materials[index - 1];
     }
 
+    
+
 }
