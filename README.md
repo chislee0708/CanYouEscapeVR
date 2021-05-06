@@ -1,6 +1,7 @@
 ## CanYouEscapeVR
 Group 4 VR game with google cardboard
-[TAKE A LOOK!](https://wolex.com/can-you-escape/)
+
+# [TAKE A LOOK!](https://wolex.com/can-you-escape/)
 
 ### Team Members: 
  Brian Chambers,
